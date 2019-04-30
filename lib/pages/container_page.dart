@@ -20,9 +20,15 @@ class ContainerPage extends StatelessWidget {
           border: Border.all(style: BorderStyle.solid, width: 6.6, color: Colors.amber),
           // borderRadius: BorderRadius.all(Radius.circular(33)), // borderRadius 和 shape: BoxShape.circle 不能同时使用
           boxShadow: [
-            BoxShadow(
+            BoxShadow( // 阴影1
               color: Colors.cyan, 
               offset: Offset(-33.0, 155.0),  // 偏离度
+              blurRadius: 3.3,   // 模糊度
+              spreadRadius: -31.1  // 扩展:向内/向外
+            ),
+            BoxShadow( // 阴影2
+              color: Colors.teal, 
+              offset: Offset(33.0, 155.0),  // 偏离度
               blurRadius: 3.3,   // 模糊度
               spreadRadius: -31.1  // 扩展:向内/向外
             )

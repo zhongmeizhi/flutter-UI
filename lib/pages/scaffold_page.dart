@@ -22,7 +22,7 @@ class _ScaffoldState extends State with TickerProviderStateMixin {
           child: Container(
             width: 222,
             height: 1,
-            child: Icon(Icons.satellite),
+            child: Icon(Icons.pageview),
           ),
         ),
         bottom: TabBar(
@@ -60,10 +60,15 @@ class _ScaffoldState extends State with TickerProviderStateMixin {
           showModalBottomSheet(
             context: context,
             builder: (BuildContext context) {
-              return Container(
-                height: 333,
-                // child: CloseButton(),
-                child: Text('showModalBottomSheet 咯'),
+              return BottomSheet(
+                builder: (BuildContext context) {
+                  return Container(
+                    height: 222,
+                    // child: CloseButton(),
+                    child: Text('showModalBottomSheet 咯'),
+                  );
+                },
+                onClosing: () {},
               );
             },
           ).then((val) {
@@ -74,24 +79,21 @@ class _ScaffoldState extends State with TickerProviderStateMixin {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat, // 设定按钮位置
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,   // 好像只有这一个选项。。。
       persistentFooterButtons: [    // 底部按钮
-        // PersistentBottomSheetController
-        BackButton(),
-        OutlineButton(onPressed: (){}, child: Text('外边')),
-        MaterialButton(onPressed: (){}, child: Text('MM')),
-        Tab(
-          text: 'TabBar-1',
-          icon: Icon(Icons.account_circle),
-          // child: Text('TabBar-1'),
-        ),
+        OutlineButton(onPressed: (){}, child: Text('persistentFooterButtons')),
       ],
       // drawer: null,  // 和endDrawer相反，但是会把自带的 ← 给替换掉
       endDrawer: Drawer(  // endDrawer 和 actions 有冲突
         elevation: 3.0,
         semanticLabel: String.fromCharCode(123),
         child: Container(
-          color: Colors.cyan,
+          color: Colors.pink,
           child: Column(
-            children: List.generate(16, (idx) => Text(idx.toString())).toList()
+            children: <Widget>[
+              DrawerHeader(
+                child: Text('DrawerHeader'),
+              ),
+              Text('body')
+            ],
           ),
         )
       ),
@@ -108,16 +110,9 @@ class _ScaffoldState extends State with TickerProviderStateMixin {
         ]
       ),
       // 一般主动使用: showModalBottomSheet
-      bottomSheet: BottomSheet(
-        builder: (BuildContext context) {
-          return new Text('aaa');
-        },
-        onClosing: () {},
-        enableDrag: true,
-        elevation: 22,
-        // animationController: 
-      ),
-      backgroundColor: Colors.cyan,
+      // bottomSheet: BottomSheet(
+      // ),
+      backgroundColor: Colors.cyan, // 脚手架背景色
       resizeToAvoidBottomPadding: true,
       resizeToAvoidBottomInset: true,
       primary: true, // 头部会变
