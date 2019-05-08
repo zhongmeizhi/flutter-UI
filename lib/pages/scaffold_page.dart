@@ -112,7 +112,7 @@ class _ScaffoldState extends State with TickerProviderStateMixin {
       // 一般主动使用: showModalBottomSheet
       // bottomSheet: BottomSheet(
       // ),
-      backgroundColor: Colors.cyan, // 脚手架背景色
+      backgroundColor: Colors.amber, // 脚手架背景色
       resizeToAvoidBottomPadding: true,
       resizeToAvoidBottomInset: true,
       primary: true, // 头部会变

@@ -17,7 +17,6 @@ class _ButtonPageState extends State<ButtonPage> {
       ),
       body: Column(
         children: <Widget>[
-          AboutDialog(),
           ButtonBar( // 右上角
             children: <Widget>[
               BackButton(), // 回退按钮 maybePop

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 // 路由
 import 'package:flutter_ui/routes/my_router.dart';
+// 国际化
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,6 +17,15 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(),
       routes: MyRouter.routes, // 页面路由
+      localizationsDelegates:  [ // 本地化代理
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('zh', 'CN'), // 中文简体
+        // const Locale('en', 'US'), // 美国英语
+        //其它Locales
+      ],
     );
   }
 }

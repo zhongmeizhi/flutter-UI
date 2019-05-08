@@ -3,6 +3,10 @@
 import 'package:flutter_ui/pages/container_page.dart';
 import 'package:flutter_ui/pages/scaffold_page.dart';
 import 'package:flutter_ui/pages/button_page.dart';
+import 'package:flutter_ui/pages/dialog_page.dart';
+import 'package:flutter_ui/pages/sheet_page.dart';
+import 'package:flutter_ui/pages/picker_page.dart';
+import 'package:flutter_ui/pages/search_page.dart';
 
 class MyRouter {
 
@@ -10,10 +14,10 @@ class MyRouter {
     '/scaffold_page': (context) => ScaffoldPage(),
     '/container_page': (context) => ContainerPage(),
     '/button_page': (context) => ButtonPage(),
-    '/3': (context) => ContainerPage(),
-    '/4': (context) => ContainerPage(),
-    '/5': (context) => ContainerPage(),
-    '/6': (context) => ContainerPage(),
+    '/dialog_page': (context) => DialogPage(),
+    '/sheet_page': (context) => SheetPage(),
+    '/picker_page': (context) => PickerPage(),
+    '/search_page': (context) => SearchPage(),
     '/7': (context) => ContainerPage(),
     '/8': (context) => ContainerPage(),
   };
