@@ -14,7 +14,7 @@ class _SheetPageState extends State<SheetPage> {
     return Scaffold(
       key: _scaffoldkey,
       appBar: AppBar(
-        title: Text('Dialog'),
+        title: Text('Sheet'),
       ),
       body: Container(
         alignment: Alignment.center,

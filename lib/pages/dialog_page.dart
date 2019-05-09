@@ -98,32 +98,80 @@ class _DialogPageState extends State<DialogPage> {
             //   },
             // ),
             RaisedButton(
-              child: Text('showMenu - 贴住屏幕显示的下拉框'),
+              child: Text('AlertDialog 类似 confirm'),
               onPressed: () {
-                showMenu(
+                showDialog(
                   context: context,
-                  position: RelativeRect.fromLTRB(0.0, 0.0, 0.0, 0.0), // 一定会贴近屏幕显示
-                  initialValue: '1',  // 初始值，对应PopupMenuItem的value
-                  elevation: 6.0,
-                  semanticLabel: 'semanticLabel',
-                  items: [
-                    PopupMenuItem(
-                      value: '1',
-                      child: Text('Text 1'),
-                    ),
-                    PopupMenuItem(
-                      value: '2',
-                      child: Text('Text 2'),
-                    )
-                  ]
+                  barrierDismissible: true,  // 是否可以点击底部遮罩层取消dialog
+                  // child: Text('data')
+                  builder: (context) {
+                    return Container(
+                      child: AlertDialog(
+                        title: Text('提示'),
+                        titlePadding: EdgeInsets.fromLTRB(24.0, 24.0, 0.0, 0.0),
+                        titleTextStyle: TextStyle(color: Colors.amber, fontSize: 22),
+                        content: Text('这是内容'),
+                        contentPadding: EdgeInsets.fromLTRB(24.0, 20.0, 24.0, 24.0),
+                        contentTextStyle: TextStyle(fontSize: 14),
+                        actions: <Widget>[
+                          RaisedButton(
+                            color: Colors.white,
+                            child: Text('取消'),
+                            onPressed: (){
+                              Navigator.maybePop(context);
+                            },
+                          ),
+                          RaisedButton(
+                            color: Colors.white,
+                            child: Text('确认'),
+                            onPressed: (){
+                              Navigator.maybePop(context);
+                            },
+                          ),
+                        ],
+                        semanticLabel: 'semanticLabel',
+                        backgroundColor: Colors.cyan,
+                        shape: Border.all(color: Colors.deepOrange),
+                        elevation: 22
+                      ),
+                    );
+                  }
                 );
               },
             ),
             RaisedButton(
-              child: Text('showMenu - 贴住屏幕显示的下拉框'),
+              child: Text('SimpleDialog 具有 children'),
               onPressed: () {
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return SimpleDialog(
+                      title: Text('title'),
+                      titlePadding: EdgeInsets.fromLTRB(24.0, 24.0, 24.0, 0.0),
+                      contentPadding: EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 16.0),
+                      children: <Widget>[
+                        SimpleDialogOption(
+                          child: Text('SimpleDialogOption 具有 onPressed'),
+                          onPressed: () {
+                            print('object');
+                          },
+                        ),
+                        SimpleDialogOption(
+                          child: Text('SimpleDialogOption 具有 onPressed'),
+                          onPressed: () {
+                            print('object');
+                          }
+                        ),
+                      ],
+                      semanticLabel: 'semanticLabel',
+                      backgroundColor: Colors.cyan,
+                      shape: Border.all(color: Colors.deepOrange),
+                      elevation: 22
+                    );
+                  }
+                );
               },
-            ),
+            )
           ],
         ),
       )

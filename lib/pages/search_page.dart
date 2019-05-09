@@ -14,12 +14,34 @@ class _SearchPageState extends State<SearchPage> {
     return Scaffold(
       key: _scaffoldkey,
       appBar: AppBar(
-        title: Text('Dialog'),
+        title: Text('Search'),
       ),
       body: Container(
         alignment: Alignment.center,
         child: Column(
           children: <Widget>[
+            RaisedButton(
+              child: Text('showMenu - 贴住屏幕显示的下拉框'),
+              onPressed: () {
+                showMenu(
+                  context: context,
+                  position: RelativeRect.fromLTRB(0.0, 1.0, 1.0, 0.0), // 一定会贴近屏幕显示
+                  initialValue: '1',  // 初始值，对应PopupMenuItem的value
+                  elevation: 6.0,
+                  semanticLabel: 'semanticLabel',
+                  items: [
+                    PopupMenuItem(
+                      value: '1',
+                      child: Text('Text 1'),
+                    ),
+                    PopupMenuItem(
+                      value: '2',
+                      child: Text('Text 2'),
+                    )
+                  ]
+                );
+              },
+            ),
             RaisedButton(
               child: Text('showSearch - 必须重写SearchDelegate'),
               onPressed: () {

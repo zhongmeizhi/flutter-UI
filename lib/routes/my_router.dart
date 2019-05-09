@@ -7,6 +7,7 @@ import 'package:flutter_ui/pages/dialog_page.dart';
 import 'package:flutter_ui/pages/sheet_page.dart';
 import 'package:flutter_ui/pages/picker_page.dart';
 import 'package:flutter_ui/pages/search_page.dart';
+import 'package:flutter_ui/pages/filter_page.dart';
 
 class MyRouter {
 
@@ -18,7 +19,7 @@ class MyRouter {
     '/sheet_page': (context) => SheetPage(),
     '/picker_page': (context) => PickerPage(),
     '/search_page': (context) => SearchPage(),
-    '/7': (context) => ContainerPage(),
+    '/filter_page': (context) => FilterPage(),
     '/8': (context) => ContainerPage(),
   };
   
