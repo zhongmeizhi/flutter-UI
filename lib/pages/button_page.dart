@@ -7,8 +7,6 @@ class ButtonPage extends StatefulWidget {
 
 class _ButtonPageState extends State<ButtonPage> {
 
-  var _value;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,34 +17,13 @@ class _ButtonPageState extends State<ButtonPage> {
         children: <Widget>[
           ButtonBar( // 右上角
             children: <Widget>[
+              Text('ButtonBar'),
               BackButton(), // 回退按钮 maybePop
               CloseButton(), // 关闭按钮 maybePop
             ],
           ),
-          DropdownButton( // 下拉框
-            items: <DropdownMenuItem>[
-              DropdownMenuItem(
-                value: '001',
-                child: Text('下拉框001'),
-              ),
-              DropdownMenuItem(
-                value: '002',
-                child: Text('下拉框002'),
-              )
-            ],
-            onChanged: (val){
-              this.setState((){
-                _value = val;
-              });
-            },
-            value: _value,
-            style: TextStyle(color: Colors.black,),
-            hint: Text('占位提示'),
-            disabledHint: Text('disabledHint'),
-            elevation: 9,
-            iconSize: 33,
-            isDense: false,
-            isExpanded: false
+          Row(
+            children: <Widget>[],
           ),
           FlatButton(
           // ShapeBorder shape,
@@ -74,29 +51,7 @@ class _ButtonPageState extends State<ButtonPage> {
             onPressed: (){},
             child: Text('FlatButton'),
           ),
-          FlatButton(
-            shape: Border.all(width: 3, color: Colors.amber), //  没法设置radius啊
-            onPressed: (){},
-            child: Text('Border'),
-          ),
-          FlatButton(
-            shape: BorderDirectional( // 单独配置
-              top: BorderSide(width: 2,color: Colors.blue),
-              end: BorderSide(width: 2,color: Colors.blue)
-            ),
-            onPressed: (){},
-            child: Text('BorderDirectional'),
-          ),
-          FlatButton(
-            shape: CircleBorder(side: BorderSide(width: 2,color: Colors.blue)), // 圆时圆了。只适合小东西用
-            onPressed: (){},
-            child: Text('CircleBorder'),
-          ),
-          FlatButton(
-            shape: OutlineInputBorder(borderRadius: BorderRadius.circular(55)), // 边框颜色怎么换？
-            onPressed: (){},
-            child: Text('OutlineInputBorder'),
-          ),
+          Text('IconButton'),
           IconButton(
             icon: Icon(Icons.ac_unit),
             onPressed: (){},

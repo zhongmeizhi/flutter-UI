@@ -8,6 +8,7 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
 
   final _scaffoldkey = new GlobalKey<ScaffoldState>();
+  var _searchValue = '';
 
   @override
   Widget build(BuildContext context) {
@@ -43,12 +44,20 @@ class _SearchPageState extends State<SearchPage> {
               },
             ),
             RaisedButton(
+              child: Text('SnackBar - 要关联Scaffold key'),
+              onPressed: () {
+                _scaffoldkey.currentState.showSnackBar(
+                  SnackBar(content: Text('SnackBar = 小吃店？'))
+                );
+              },
+            ),
+            RaisedButton(
               child: Text('showSearch - 必须重写SearchDelegate'),
               onPressed: () {
                 showSearch(
                   context: context,
-                  query: '默认值',
-                  delegate: MySearch()
+                  query: _searchValue,
+                  delegate: MySearch(_searchValue)
                 );
               },
             ),
@@ -61,27 +70,36 @@ class _SearchPageState extends State<SearchPage> {
 
 class MySearch extends SearchDelegate {
 
+  var _searchValue;
+
+  MySearch(this._searchValue);
+
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
-      Text('1')
+      BackButton(),
+      CloseButton()
     ];
   }
 
   @override
   Widget buildResults(BuildContext context) {
-    return Text('buildResults');
+    // 通过this调用SearchDelegate源码中的 query
+    return ListTile(
+      title: Text('未能找到'+ this.query +'相关内容')
+    );
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
     return Column(
-      children: <Widget>[
-        Text('Suggestions'),
-        Text('Suggestions'),
-        Text('Suggestions'),
-        Text('Suggestions'),
-      ],
+      children: List.generate(4, (index) => ListTile(
+          title: Text('Suggestions 00' + index.toString()),
+          onTap: (){
+            // 通过this调用SearchDelegate源码中的 query
+            this.query = 'Suggestions 00' + index.toString();
+          },
+        )).toList()
     );
   }
 

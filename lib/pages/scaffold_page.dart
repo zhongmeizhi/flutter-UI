@@ -42,41 +42,23 @@ class _ScaffoldState extends State with TickerProviderStateMixin {
         elevation: 55,
         backgroundColor: Colors.blue,
         brightness: Brightness.dark, // 最上边手机其他信息栏
-        iconTheme: IconThemeData(color: Colors.red, opacity: 0.8, size: 0.6),
+        iconTheme: IconThemeData(color: Colors.red, opacity: 1, size: 1.6),
         textTheme: TextTheme(
-          title: TextStyle(color: Colors.red)
+          title: TextStyle(color: Colors.pink, fontSize: 22)
         ),
         primary: true,
         centerTitle: true,  // 文本居中哇
         titleSpacing: NavigationToolbar.kMiddleSpacing, // 只有1个选项
-        toolbarOpacity: 0.7, // 整栏
-        bottomOpacity: 0.8
+        toolbarOpacity: 1, // 最上部
+        bottomOpacity: 0.5,
       ),
-      body: Container(),
       floatingActionButton: IconButton( // 自带页面浮动按钮
-        icon: Icon(Icons.power, size: 55,),
+        icon: Icon(Icons.ac_unit, size: 55,),
         onPressed: () {
           // _scaffoldkey.currentState.showSnackBar(SnackBar(content: Text('要充电啦'),));
-          showModalBottomSheet(
-            context: context,
-            builder: (BuildContext context) {
-              return BottomSheet(
-                builder: (BuildContext context) {
-                  return Container(
-                    height: 222,
-                    // child: CloseButton(),
-                    child: Text('showModalBottomSheet 咯'),
-                  );
-                },
-                onClosing: () {},
-              );
-            },
-          ).then((val) {
-              print(val);
-          });
         }
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat, // 设定按钮位置
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat, // 设定按钮位置
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,   // 好像只有这一个选项。。。
       persistentFooterButtons: [    // 底部按钮
         OutlineButton(onPressed: (){}, child: Text('persistentFooterButtons')),
@@ -117,7 +99,7 @@ class _ScaffoldState extends State with TickerProviderStateMixin {
       resizeToAvoidBottomInset: true,
       primary: true, // 头部会变
       // drawerDragStartBehavior: DragStartBehavior.down,
-      // body: Container(),
+      body: Container(),
     );
   }
 }

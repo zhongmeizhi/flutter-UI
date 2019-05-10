@@ -43,7 +43,7 @@ class ContainerPage extends StatelessWidget {
             focalRadius: 0.5, // 怪怪的.具体操作不详
           ),
           backgroundBlendMode: BlendMode.difference,  // 背景混合的方式,怪怪的.
-          shape: BoxShape.circle
+          shape: BoxShape.circle, // border变成圆
         ),
         foregroundDecoration: BoxDecoration(), // 遮罩层
         constraints: BoxConstraints( // 约束
