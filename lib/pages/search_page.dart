@@ -105,6 +105,12 @@ class MySearch extends SearchDelegate {
 
   @override
   Widget buildLeading(BuildContext context) {
-    return Icon(Icons.search);
+    return RaisedButton(
+      child: Icon(Icons.search),
+      color: Colors.white,
+      onPressed: (){
+        this.showResults(context);
+      },
+    );
   }
 }
