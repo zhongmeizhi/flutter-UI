@@ -68,7 +68,7 @@ class _ButtonPageState extends State<ButtonPage> {
             onPressed: (){},
             child: Text('RawMaterialButton'),
             textStyle: TextStyle(color: Colors.blue),
-            fillColor: Colors.amber,
+            // fillColor: Colors.amber,
             elevation: 5.0, // 翻译为海拔， 差不多就算按钮的阴影。
             highlightElevation: 8.0,
             disabledElevation: 0.0,

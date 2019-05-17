@@ -20,6 +20,9 @@ class _DialogPageState extends State<DialogPage> {
         alignment: Alignment.center,
         child: Column(
           children: <Widget>[
+
+            // show 都是 Feature。可以then
+
             RaisedButton(
               child: Text('showDialog - 容易写的 dialog'),
               onPressed: () {
