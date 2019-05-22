@@ -43,7 +43,7 @@ class _CheckboxPageState extends State<CheckboxPage> {
               },
               // leading：左边是checkbox, platform：右边是checkbox
               controlAffinity: ListTileControlAffinity.leading,
-              title: Text('title'),
+              title: Text('CheckboxListTile'),
               // subtitle: Text('subtitle'),
               // secondary: Text('secondary'),
               // isThreeLine: false, // 三行
