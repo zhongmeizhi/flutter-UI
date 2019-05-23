@@ -16,10 +16,9 @@ class MyApp extends StatelessWidget {
     
     routes.addAll(MyRouter.layoutRoutes);
     routes.addAll(MyRouter.formRoutes);
+    routes.addAll(MyRouter.scrollRoutes);
     routes.addAll(MyRouter.popupRoutes);
-    routes.addAll(MyRouter.functionalRoutes);
     routes.addAll(MyRouter.decorateRoutes);
-    routes.addAll(MyRouter.combRoutes);
 
     return MaterialApp(
       title: '蘑菇碳UI',
@@ -66,10 +65,9 @@ class MyHomePage extends StatelessWidget {
           children: <Widget>[
             _layoutRoutesWrap(_linkButton),
             _formRoutesWrap(_linkButton),
+            _scrollRoutesWrap(_linkButton),
             _popupRoutesWrap(_linkButton),
-            _functionalRoutesWrap(_linkButton),
             _decorateRoutesWrap(_linkButton),
-            _combRoutesWrap(_linkButton),
           ],
         ),
       )
@@ -98,7 +96,7 @@ Widget _layoutRoutesWrap (_linkButton) {
   MyRouter.layoutRoutes.forEach((routeName, val) => (
     items.add(_linkButton(routeName))
   ));
-  return _routeWarp('布局类Widget', items);
+  return _routeWarp('容器类Widget', items);
 }
 
 Widget _formRoutesWrap (_linkButton) {
@@ -109,6 +107,14 @@ Widget _formRoutesWrap (_linkButton) {
   return _routeWarp('表单类Widget', items);
 }
 
+Widget _scrollRoutesWrap (_linkButton) {
+  List<Widget> items = [];
+  MyRouter.scrollRoutes.forEach((routeName, val) => (
+    items.add(_linkButton(routeName))
+  ));
+  return _routeWarp('滚动类Widget', items);
+}
+
 Widget _popupRoutesWrap (_linkButton) {
   List<Widget> items = [];
   MyRouter.popupRoutes.forEach((routeName, val) => (
@@ -117,26 +123,10 @@ Widget _popupRoutesWrap (_linkButton) {
   return _routeWarp('弹出类Widget', items);
 }
 
-Widget _functionalRoutesWrap (_linkButton) {
-  List<Widget> items = [];
-  MyRouter.functionalRoutes.forEach((routeName, val) => (
-    items.add(_linkButton(routeName))
-  ));
-  return _routeWarp('功能类Widget', items);
-}
-
 Widget _decorateRoutesWrap (_linkButton) {
   List<Widget> items = [];
   MyRouter.decorateRoutes.forEach((routeName, val) => (
     items.add(_linkButton(routeName))
   ));
-  return _routeWarp('修饰类Widget', items);
-}
-
-Widget _combRoutesWrap (_linkButton) {
-  List<Widget> items = [];
-  MyRouter.combRoutes.forEach((routeName, val) => (
-    items.add(_linkButton(routeName))
-  ));
-  return _routeWarp('组合类Widget', items);
+  return _routeWarp('功能类Widget', items);
 }
