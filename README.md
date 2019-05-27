@@ -1,11 +1,9 @@
 # 蘑菇碳的flutter_ui
 
-将Flutter的各种API都实现一次
+将Flutter各种Widget各种API都实现一次。
 
-![效果图1](/assets/img/1.png)
-
-![效果图2](/assets/img/2.png)
-
+|![效果图1](/assets/img/1.png)|![效果图2](/assets/img/2.png)|
+|---|---|
 
 参考链接：
 - [开发文档](https://flutter.io/docs/get-started/codelab)
