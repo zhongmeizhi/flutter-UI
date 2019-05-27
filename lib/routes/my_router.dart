@@ -37,6 +37,9 @@ import 'package:flutter_ui/pages/grid_view_page.dart';
 import 'package:flutter_ui/pages/custom_scroll_view.dart';
 import 'package:flutter_ui/pages/page_view_page.dart';
 import 'package:flutter_ui/pages/tab_view_page.dart';
+import 'package:flutter_ui/pages/will_pop_scope_page.dart';
+import 'package:flutter_ui/pages/gesture_detector_page.dart';
+import 'package:flutter_ui/pages/notification_page.dart';
 
 class MyRouter {
 
@@ -90,8 +93,11 @@ class MyRouter {
 
   // 功能类 Widget
   static final Map<String, WidgetBuilder> decorateRoutes = {
+    '/WillPopScope_page': (context) => WillPopScopePage(),
     '/Search_page': (context) => SearchPage(),
     '/Hero_page': (context) => HeroPage(),
+    '/Notification_page': (context) => NotificationPage(),
+    '/GestureDetector_page': (context) => GestureDetectorPage(),
     '/Filter_page': (context) => FilterPage(),
     '/Transform_page': (context) => TransformPage(),
     '/Shape_page': (context) => ShapePage(),
