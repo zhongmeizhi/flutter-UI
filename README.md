@@ -1,12 +1,12 @@
-# 蘑菇碳的flutter_ui
+# 蘑菇碳的 Flutter_ui
 
-将Flutter各种Widget各种API都实现一次。
+> 将Flutter各种Widget各种API都实现一次。
 
-### 点击Widget清单的按钮会跳转到各自对应的Widget实现页面。
-
-![效果图9](/assets/img/9.png)
+用于给初学者提供Flutter可视化Widget，方便初学者学习和使用，同时给自己的Flutter提供备忘、代码copy功能。
 
 ***
+
+### 点击Widget清单的按钮会跳转到各自对应的Widget实现页面。
 
 |![效果图1](/assets/img/1.png)|![效果图2](/assets/img/2.png)|
 |---|---|
