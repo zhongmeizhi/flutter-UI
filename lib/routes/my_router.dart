@@ -40,12 +40,18 @@ import 'package:flutter_ui/pages/tab_view_page.dart';
 import 'package:flutter_ui/pages/will_pop_scope_page.dart';
 import 'package:flutter_ui/pages/gesture_detector_page.dart';
 import 'package:flutter_ui/pages/notification_page.dart';
+import 'package:flutter_ui/pages/indexed_stack_page.dart';
+import 'package:flutter_ui/pages/overlay_page.dart';
+import 'package:flutter_ui/pages/circle_avatar_page.dart';
+import 'package:flutter_ui/pages/refresh_indicator_page.dart';
+import 'package:flutter_ui/pages/method_channel_page.dart';
 
 class MyRouter {
 
   // 容器类 Widget
   static final Map<String, WidgetBuilder> layoutRoutes = {
     '/Scaffold_page': (context) => ScaffoldPage(),
+    '/IndexedStack_page': (context) => IndexedStackPage(),
     '/Expansion_page': (context) => ExpansionPage(),
     '/TabBar_page': (context) => TabBarPage(),
     '/Container_page': (context) => ContainerPage(),
@@ -56,6 +62,7 @@ class MyRouter {
     '/Stack_page': (context) => StackPage(),
     '/Padding_page': (context) => PaddingPage(),
     '/DecoratedBox_page': (context) => DecoratedBoxPage(),
+    '/CircleAvatar_page': (context) => CircleAvatarPage(),
     '/Flow_page': (context) => FlowPage(),
   };
 
@@ -89,18 +96,21 @@ class MyRouter {
     '/SnackBar_page': (context) => SnackBarPage(),
     '/Picker_page': (context) => PickerPage(),
     '/Menu_page': (context) => MenuPage(),
+    '/Overlay_page': (context) => OverlayPage(),
   };
 
   // 功能类 Widget
   static final Map<String, WidgetBuilder> decorateRoutes = {
     '/WillPopScope_page': (context) => WillPopScopePage(),
     '/Search_page': (context) => SearchPage(),
+    '/RefreshIndicator_page': (context) => RefreshIndicatorPage(),
     '/Hero_page': (context) => HeroPage(),
     '/Notification_page': (context) => NotificationPage(),
     '/GestureDetector_page': (context) => GestureDetectorPage(),
     '/Filter_page': (context) => FilterPage(),
     '/Transform_page': (context) => TransformPage(),
     '/Shape_page': (context) => ShapePage(),
+    '/MethodChannel_page': (context) => MethodChannelPage(),
   };
 
 }
