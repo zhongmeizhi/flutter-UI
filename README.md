@@ -1,8 +1,8 @@
-# 蘑菇碳的 Flutter_ui
+# 蘑菇碳的 Flutter_UI
 
 > 将Flutter各种Widget各种API都实现一次。
 
-用于给初学者提供Flutter可视化Widget，方便初学者学习和使用，同时给自己的Flutter提供备忘、代码copy功能。
+**用于给初学者提供Flutter可视化Widget，方便初学者学习和使用，同时给自己的Flutter提供备忘、代码copy功能。**
 
 ***
 
