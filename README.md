@@ -11,6 +11,9 @@
 |![效果图1](/assets/img/1.png)|![效果图2](/assets/img/2.png)|
 |---|---|
 
+### 动态图（展示下 Search 功能 ）
+![效果图3](/assets/img/3.gif)
+
 参考链接：
 - [开发文档](https://flutter.io/docs/get-started/codelab)
 - [功能齐全的flutter项目](https://github.com/zhongmeizhi/fultter-example-app)
