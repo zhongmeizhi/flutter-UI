@@ -45,6 +45,7 @@ import 'package:flutter_ui/pages/overlay_page.dart';
 import 'package:flutter_ui/pages/circle_avatar_page.dart';
 import 'package:flutter_ui/pages/refresh_indicator_page.dart';
 import 'package:flutter_ui/pages/method_channel_page.dart';
+import 'package:flutter_ui/pages/navigator_page.dart';
 
 class MyRouter {
 
@@ -109,6 +110,7 @@ class MyRouter {
     '/GestureDetector_page': (context) => GestureDetectorPage(),
     '/Filter_page': (context) => FilterPage(),
     '/Transform_page': (context) => TransformPage(),
+    '/Navigator_page': (context) => NavigatorPage(),
     '/Shape_page': (context) => ShapePage(),
     '/MethodChannel_page': (context) => MethodChannelPage(),
   };
