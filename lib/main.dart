@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 // 路由
 import 'package:flutter_ui/routes/my_router.dart';
@@ -11,14 +12,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    // typedef WidgetBuilder = Widget Function(BuildContext context);
+    // 拼Routes
     Map<String, WidgetBuilder> routes = new Map<String, WidgetBuilder>();
-    
-    routes.addAll(MyRouter.layoutRoutes);
-    routes.addAll(MyRouter.formRoutes);
-    routes.addAll(MyRouter.scrollRoutes);
-    routes.addAll(MyRouter.popupRoutes);
-    routes.addAll(MyRouter.decorateRoutes);
+    MyRouter.routes.forEach((val) => routes.addAll(val['route']));
 
     return MaterialApp(
       title: '蘑菇碳UI',
@@ -44,6 +40,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    
     // 路由跳转按钮
     Widget _linkButton(String routeName) {
       return RaisedButton(
@@ -52,6 +49,14 @@ class MyHomePage extends StatelessWidget {
           Navigator.of(context).pushNamed(routeName);
         }
       );
+    }
+    
+    Widget _wrapWidget (name, routes) {
+      List<Widget> items = [];
+      routes.forEach((routeName, val) => (
+        items.add(_linkButton(routeName))
+      ));
+      return _routeWarp(name, items);
     }
 
     return Scaffold(
@@ -62,13 +67,9 @@ class MyHomePage extends StatelessWidget {
         alignment: Alignment.center,
         child: ListView(
           padding: EdgeInsets.symmetric(horizontal: 6.0, vertical: 22.0),
-          children: <Widget>[
-            _layoutRoutesWrap(_linkButton),
-            _formRoutesWrap(_linkButton),
-            _scrollRoutesWrap(_linkButton),
-            _popupRoutesWrap(_linkButton),
-            _decorateRoutesWrap(_linkButton),
-          ],
+          children: MyRouter.routes.map(
+            (val) =>_wrapWidget(val['name'], val['route'])
+          ).toList()
         ),
       )
     );
@@ -87,46 +88,4 @@ Widget _routeWarp(text, items) {
       PopupMenuDivider(),
     ],
   );
-}
-
-// 不知道 怎么 MyRouter['layoutRoutes']
-
-Widget _layoutRoutesWrap (_linkButton) {
-  List<Widget> items = [];
-  MyRouter.layoutRoutes.forEach((routeName, val) => (
-    items.add(_linkButton(routeName))
-  ));
-  return _routeWarp('容器类Widget', items);
-}
-
-Widget _formRoutesWrap (_linkButton) {
-  List<Widget> items = [];
-  MyRouter.formRoutes.forEach((routeName, val) => (
-    items.add(_linkButton(routeName))
-  ));
-  return _routeWarp('表单类Widget', items);
-}
-
-Widget _scrollRoutesWrap (_linkButton) {
-  List<Widget> items = [];
-  MyRouter.scrollRoutes.forEach((routeName, val) => (
-    items.add(_linkButton(routeName))
-  ));
-  return _routeWarp('滚动类Widget', items);
-}
-
-Widget _popupRoutesWrap (_linkButton) {
-  List<Widget> items = [];
-  MyRouter.popupRoutes.forEach((routeName, val) => (
-    items.add(_linkButton(routeName))
-  ));
-  return _routeWarp('弹出类Widget', items);
-}
-
-Widget _decorateRoutesWrap (_linkButton) {
-  List<Widget> items = [];
-  MyRouter.decorateRoutes.forEach((routeName, val) => (
-    items.add(_linkButton(routeName))
-  ));
-  return _routeWarp('功能类Widget', items);
 }

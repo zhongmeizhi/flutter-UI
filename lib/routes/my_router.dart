@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 // pages
 import 'package:flutter_ui/pages/scaffold_page.dart';
 import 'package:flutter_ui/pages/container_page.dart';
@@ -49,70 +48,79 @@ import 'package:flutter_ui/pages/navigator_page.dart';
 
 class MyRouter {
 
-  // 容器类 Widget
-  static final Map<String, WidgetBuilder> layoutRoutes = {
-    '/Scaffold_page': (context) => ScaffoldPage(),
-    '/IndexedStack_page': (context) => IndexedStackPage(),
-    '/Expansion_page': (context) => ExpansionPage(),
-    '/TabBar_page': (context) => TabBarPage(),
-    '/Container_page': (context) => ContainerPage(),
-    '/Row_page': (context) => RowPage(),
-    '/Column_page': (context) => ColumnPage(),
-    '/Wrap_page': (context) => WrapPage(),
-    '/Table_page': (context) => TablePage(),
-    '/Stack_page': (context) => StackPage(),
-    '/Padding_page': (context) => PaddingPage(),
-    '/DecoratedBox_page': (context) => DecoratedBoxPage(),
-    '/CircleAvatar_page': (context) => CircleAvatarPage(),
-    '/Flow_page': (context) => FlowPage(),
-  };
-
-  // 表单类 Widget
-  static final Map<String, WidgetBuilder> formRoutes = {
-    '/Form_page': (context) => FormPage(),
-    '/ListTitle_page': (context) => ListTitlePage(),
-    '/TextField_page': (context) => TextFieldPage(),
-    '/Text_page': (context) => TextPage(),
-    '/Button_page': (context) => ButtonPage(),
-    '/Switch_page': (context) => SwitchPage(),
-    '/Chip_page': (context) => ChipPage(),
-    '/Radio_page': (context) => RadioPage(),
-    '/CheckBox_page': (context) => CheckboxPage(),
-    '/DropDown_page': (context) => DropDownPage(),
-  };
-
-  // 滚动类 Widget
-  static final Map<String, WidgetBuilder> scrollRoutes = {
-    '/ListView_page': (context) => ListViewPage(),
-    '/GridView_page': (context) => GridViewPage(),
-    '/CustomScrollView_page': (context) => CustomScrollViewPage(),
-    '/PageView_page': (context) => PageViewPage(),
-    '/TabBarView_page': (context) => TabBarViewPage(),
-  };
-
-  // 弹出类 Widget
-  static final Map<String, WidgetBuilder> popupRoutes = {
-    '/Dialog_page': (context) => DialogPage(),
-    '/Sheet_page': (context) => SheetPage(),
-    '/SnackBar_page': (context) => SnackBarPage(),
-    '/Picker_page': (context) => PickerPage(),
-    '/Menu_page': (context) => MenuPage(),
-    '/Overlay_page': (context) => OverlayPage(),
-  };
-
-  // 功能类 Widget
-  static final Map<String, WidgetBuilder> decorateRoutes = {
-    '/WillPopScope_page': (context) => WillPopScopePage(),
-    '/Search_page': (context) => SearchPage(),
-    '/RefreshIndicator_page': (context) => RefreshIndicatorPage(),
-    '/Hero_page': (context) => HeroPage(),
-    '/Notification_page': (context) => NotificationPage(),
-    '/GestureDetector_page': (context) => GestureDetectorPage(),
-    '/Filter_page': (context) => FilterPage(),
-    '/Transform_page': (context) => TransformPage(),
-    '/Navigator_page': (context) => NavigatorPage(),
-    '/Shape_page': (context) => ShapePage(),
-    '/MethodChannel_page': (context) => MethodChannelPage(),
-  };
-
+  static List get routes => [
+    {
+      "name": "容器类 Widget",
+      "route": {
+        '/Scaffold_page': (context) => ScaffoldPage(),
+        '/IndexedStack_page': (context) => IndexedStackPage(),
+        '/Expansion_page': (context) => ExpansionPage(),
+        '/TabBar_page': (context) => TabBarPage(),
+        '/Container_page': (context) => ContainerPage(),
+        '/Row_page': (context) => RowPage(),
+        '/Column_page': (context) => ColumnPage(),
+        '/Wrap_page': (context) => WrapPage(),
+        '/Table_page': (context) => TablePage(),
+        '/Stack_page': (context) => StackPage(),
+        '/Padding_page': (context) => PaddingPage(),
+        '/DecoratedBox_page': (context) => DecoratedBoxPage(),
+        '/CircleAvatar_page': (context) => CircleAvatarPage(),
+        '/Flow_page': (context) => FlowPage(),
+      }
+    }, {
+      "name": "表单类 Widget",
+      "route": {
+        '/Form_page': (context) => FormPage(),
+        '/ListTitle_page': (context) => ListTitlePage(),
+        '/TextField_page': (context) => TextFieldPage(),
+        '/Text_page': (context) => TextPage(),
+        '/Button_page': (context) => ButtonPage(),
+        '/Switch_page': (context) => SwitchPage(),
+        '/Chip_page': (context) => ChipPage(),
+        '/Radio_page': (context) => RadioPage(),
+        '/CheckBox_page': (context) => CheckboxPage(),
+        '/DropDown_page': (context) => DropDownPage(),
+      }
+    }, {
+      "name": "滚动类 Widget",
+      "route": {
+        '/ListView_page': (context) => ListViewPage(),
+        '/GridView_page': (context) => GridViewPage(),
+        '/CustomScrollView_page': (context) => CustomScrollViewPage(),
+        '/PageView_page': (context) => PageViewPage(),
+        '/TabBarView_page': (context) => TabBarViewPage(),
+      }
+    }, {
+      "name": "弹出类 Widget",
+      "route": {
+        '/Dialog_page': (context) => DialogPage(),
+        '/Sheet_page': (context) => SheetPage(),
+        '/SnackBar_page': (context) => SnackBarPage(),
+        '/Picker_page': (context) => PickerPage(),
+        '/Menu_page': (context) => MenuPage(),
+        '/Overlay_page': (context) => OverlayPage(),
+      }
+    }, {
+      "name": "功能类 Widget",
+      "route": {
+        '/WillPopScope_page': (context) => WillPopScopePage(),
+        '/Search_page': (context) => SearchPage(),
+        '/RefreshIndicator_page': (context) => RefreshIndicatorPage(),
+        '/Hero_page': (context) => HeroPage(),
+        '/Notification_page': (context) => NotificationPage(),
+        '/GestureDetector_page': (context) => GestureDetectorPage(),
+        '/Filter_page': (context) => FilterPage(),
+        '/Transform_page': (context) => TransformPage(),
+        '/Navigator_page': (context) => NavigatorPage(),
+        '/Shape_page': (context) => ShapePage(),
+        '/MethodChannel_page': (context) => MethodChannelPage(),
+      }
+    }, {
+      "name": "IOS样式类 Widget",
+      "route": {
+        '/WillPopScope_page': (context) => WillPopScopePage(),
+      }
+    }
+  ];
+  
 }
