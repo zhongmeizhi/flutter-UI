@@ -19,20 +19,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '蘑菇碳UI',
       debugShowCheckedModeBanner: false, // 开发环境删除右上角角标
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: MyHomePage(),
       routes: routes, // 页面路由
-      localizationsDelegates:  [ // 本地化代理
-        GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate,
-      ],
-      supportedLocales: [
-        const Locale('zh', 'CN'), // 中文简体
+      // localizationsDelegates:  [ // 本地化代理
+      //   GlobalMaterialLocalizations.delegate,
+      //   GlobalWidgetsLocalizations.delegate,
+      // ],
+      // supportedLocales: [
+        // const Locale('zh', 'CN'), // 中文简体
         // const Locale('en', 'US'), // 美国英语
         //其它Locales
-      ],
+      // ],
     );
   }
 }
@@ -44,14 +42,27 @@ class MyHomePage extends StatelessWidget {
     // 路由跳转按钮
     Widget _linkButton(String routeName) {
       return RaisedButton(
+        color: Colors.cyan[100],
         child: Text(routeName.replaceFirst('/', '').replaceFirst('_page', '')),
-        onPressed: () {
-          Navigator.of(context).pushNamed(routeName);
-        }
+        onPressed: () => Navigator.of(context).pushNamed(routeName)
+      );
+    }
+
+    Widget _routeWarp(text, items) {
+      return Column(
+        children: <Widget>[
+          Text(text, style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),),
+          Wrap(
+            alignment: WrapAlignment.start,
+            spacing: 6.0,
+            children: items,
+          ),
+          PopupMenuDivider(),
+        ],
       );
     }
     
-    Widget _wrapWidget (name, routes) {
+    Widget _wrapWidget(name, routes) {
       List<Widget> items = [];
       routes.forEach((routeName, val) => (
         items.add(_linkButton(routeName))
@@ -74,18 +85,4 @@ class MyHomePage extends StatelessWidget {
       )
     );
   }
-}
-
-Widget _routeWarp(text, items) {
-  return Column(
-    children: <Widget>[
-      Text(text),
-      Wrap(
-        alignment: WrapAlignment.start,
-        spacing: 6.0,
-        children: items,
-      ),
-      PopupMenuDivider(),
-    ],
-  );
 }

@@ -1,4 +1,6 @@
 // pages
+import 'package:flutter_ui/pages/cupertino/picker_page.dart';
+import 'package:flutter_ui/pages/cupertino/sheet_page.dart';
 import 'package:flutter_ui/pages/scaffold_page.dart';
 import 'package:flutter_ui/pages/container_page.dart';
 import 'package:flutter_ui/pages/button_page.dart';
@@ -118,7 +120,8 @@ class MyRouter {
     }, {
       "name": "IOS样式类 Widget",
       "route": {
-        '/WillPopScope_page': (context) => WillPopScopePage(),
+        '/IosSheet_page': (context) => IosSheetPage(),
+        '/IosPicker_page': (context) => IosPicker(),
       }
     }
   ];
