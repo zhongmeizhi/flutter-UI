@@ -8,11 +8,11 @@
 
 ### 点击Widget清单的按钮会跳转到各自对应的Widget实现页面。
 
-|![效果图1](/assets/img/1.png)|![效果图2](/assets/img/2.png)|
+|效果图|效果图|
 |---|---|
+|![效果图1](/assets/img/1.png)|![效果图2](/assets/img/2.png)|
+|![效果图3](/assets/img/3.png)|![效果图2](/assets/img/4.png)|
 
-### 动态图（展示下 Search 功能 ）
-![效果图3](/assets/img/3.gif)
 
 参考链接：
 - [开发文档](https://flutter.io/docs/get-started/codelab)
