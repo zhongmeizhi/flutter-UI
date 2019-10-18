@@ -1,6 +1,11 @@
 // pages
+import 'package:flutter_ui/pages/cupertino/button_page.dart';
+import 'package:flutter_ui/pages/cupertino/dialog_page.dart';
 import 'package:flutter_ui/pages/cupertino/picker_page.dart';
 import 'package:flutter_ui/pages/cupertino/sheet_page.dart';
+import 'package:flutter_ui/pages/cupertino/slider_page.dart';
+import 'package:flutter_ui/pages/cupertino/switch_page.dart';
+import 'package:flutter_ui/pages/cupertino/text_field.dart';
 import 'package:flutter_ui/pages/scaffold_page.dart';
 import 'package:flutter_ui/pages/container_page.dart';
 import 'package:flutter_ui/pages/button_page.dart';
@@ -120,8 +125,13 @@ class MyRouter {
     }, {
       "name": "IOS样式类 Widget",
       "route": {
+        '/IosSwitch_page': (context) => IosSwitchPage(),
+        '/IosButton_page': (context) => IosButtonPage(),
+        '/IosField_page': (context) => IosTextFieldpage(),
+        '/IosSlider_page': (context) => IosSliderPage(),
         '/IosSheet_page': (context) => IosSheetPage(),
         '/IosPicker_page': (context) => IosPicker(),
+        '/IosDialog_page': (context) => IosDialog(),
       }
     }
   ];

@@ -66,9 +66,9 @@ class _NavigatorPageState extends State<NavigatorPage> {
                   // transitionDuration: const Duration(milliseconds: 0),
                 );
               },
-              onUnknownRoute: (val) {
-                print(val);
-              },
+              // onUnknownRoute: (val) {
+              //   print(val);
+              // },
               observers: <NavigatorObserver>[]
             ),
           ),

@@ -32,6 +32,7 @@ class _NotificationPageState extends State<NotificationPage> {
             case ScrollEndNotification: print("滚动停止"); break;
             case OverscrollNotification: print("滚动到边界"); break;
           }
+          return true;
         },
         child: ListView.builder(
             itemCount: 100,

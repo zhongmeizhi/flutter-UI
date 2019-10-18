@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // 路由
 import 'package:flutter_ui/routes/my_router.dart';
 // 国际化
-import 'package:flutter_localizations/flutter_localizations.dart';
+// import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() => runApp(MyApp());
 

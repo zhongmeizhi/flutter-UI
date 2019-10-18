@@ -10,8 +10,8 @@
 
 |效果图|效果图|
 |---|---|
-|![效果图1](/assets/img/1.png)|![效果图2](/assets/img/2.png)|
 |![效果图3](/assets/img/3.png)|![效果图2](/assets/img/4.png)|
+|![效果图1](/assets/img/1.png)|![效果图2](/assets/img/2.png)|
 
 
 参考链接：
